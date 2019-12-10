@@ -1,8 +1,7 @@
-FROM alpine:edge
-RUN apk add --no-cache bash
-RUN apk add --no-cache curl
-RUN apk add --no-cache httpie
+FROM alpine
+RUN apk add bash curl httpie
 
-ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh /wait-for-it.sh
-RUN chmod +x /wait-for-it.sh
+ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh /wait-for-it
+RUN chmod +x /wait-for-it
+RUN mv /wait-for-it /bin
 
